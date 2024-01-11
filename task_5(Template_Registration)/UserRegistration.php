@@ -36,12 +36,9 @@ function handle_submit_user_registration_content(){
     
         $user_id = wp_insert_user($user_registration_data);
          
-      //  if($user_id){
-      //   echo $fullname." registered successfully";
-      //  }
-       if (is_wp_error($user_id)) {
-        error_log('User registration failed: ' . $user_id->get_error_message());
-    }
+        if($user_id){
+          echo " registered successfully";
+        }
     
         do_action('template_registration_data_after_post_insert', $user_registration_data); //to pass $email_data as argument of function wp_insert_post in hook
     
