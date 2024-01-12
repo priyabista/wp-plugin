@@ -46,33 +46,37 @@ function my_custom_plugin_register_setting(){
 
 function my_custom_plugin_input_field_callback() {
     $options = get_option('my_custom_firstname');
-    echo "<input type='text' name='my_custom_firstname' value='$options'/>";
+    echo "<input type='text' name='my_custom_firstname' value=' " .$options. "'/>";
 }
 
 function my_custom_plugin_radio_box_field_callback(){
   $options = get_option('my_custom_gender');
-  echo "<label><input type='radio' name='my_custom_gender' value='male'> Male</label>&nbsp";
-  echo "<label><input type='radio' name='my_custom_gender' value='female'> Female</label>&nbsp";
+  echo "<label><input type='radio' name='my_custom_gender' value='male' " . checked('male', $options, false) . "> Male</label>&nbsp";
+  echo "<label><input type='radio' name='my_custom_gender' value='female' " . checked('female', $options, false) . "> Female</label>&nbsp";
 }
 
 function my_custom_plugin_check_box_callback(){
-  $option = get_option('my_custom_checkbox');
-  echo "<label><input type='checkbox' name='my_custom_department' value='BCA'> BCA</label>&nbsp";
-  echo "<label><input type='checkbox' name='my_custom_department' value='Bsc Csit'>Bsc Csit</label>";
+  $option = get_option('my_custom_department');
+ 
+
+  echo "<label><input type='checkbox' name='my_custom_department[]' value='BCA' " . checked(in_array('BCA', $option), true, false) . "> BCA</label>&nbsp";
+  echo "<label><input type='checkbox' name='my_custom_department[]' value='BscCsit' " . checked(in_array('BscCsit', $option), true, false) . "> Bsc Csit</label>";
+
+ 
 }
 
 function my_custom_plugin_textarea_field_callback(){
     $option = get_option('my_custom_description');
-    echo "<input type='textarea' name='my_custom_description' value='$option'/>";
+    echo "<input type='textarea' name='my_custom_description' value=' " .$option. "'/>";
 }
 
 function my_custom_plugin_dropdown_callback(){
     $option = get_option('my_custom_role');
     echo "<select name='my_custom_role'>";
     
-    echo "<option value='Teacher'>Teacher</option>";
+    echo "<option value='Teacher' " . selected('Teacher', $option, false) . ">Teacher</option>";
     
-    echo "<option value='Student'>Student</option>";
+    echo "<option value='Student' " . selected('Student', $option, false) . ">Student</option>";
 
     echo "</select>";
 }
