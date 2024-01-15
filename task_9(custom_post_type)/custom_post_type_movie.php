@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Custom Post Type
-Description: Welcome to this send email plugin --
+Description: Welcome to this  plugin --
 Version: 1.0
 Author: Priya
 */
