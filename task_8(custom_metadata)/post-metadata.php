@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Nepal
+Plugin Name: Post Metadata
 Description: Welcome to this send email plugin --
 Version: 1.0
 Author: Priya
@@ -55,15 +55,15 @@ add_action('save_post','cmb_handle_person_form_data');
 
 
 function cmb_display_person_details($content){
-    
+    $after_content = '';
     global $post;
     $name = get_post_meta($post->ID,'name', true);
     $country = get_post_meta($post->ID,'country', true);
     $message = get_post_meta($post->ID,'message', true);
     
-    $content= "My name is:".$name."<br>"."I am from: ".$country."<br>"."My message:".$message;
+    $after_content= "My name is:".$name."<br>"."I am from: ".$country."<br>"."My message:".$message;
 
-
+    $content.=$after_content;
 return $content;
 }
 add_filter('the_content', 'cmb_display_person_details');
