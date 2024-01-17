@@ -16,7 +16,6 @@ function my_enqueue($hook){
 		return;
 	}
 
-
 	wp_enqueue_script(
 		'ajax-script',
 		plugins_url('/js/myjquery.js', __FILE__),

@@ -1,4 +1,3 @@
-console.log('test');
 
 jQuery(document).ready(function($) {
 
@@ -10,7 +9,6 @@ jQuery(document).ready(function($) {
     var reg_email = $('#email').val();
     var reg_pass = $('#password').val();
 
-    console.log(reg_nonce);
 
     var ajax_url = my_ajax_obj.ajax_url;
 
@@ -22,7 +20,6 @@ jQuery(document).ready(function($) {
      user_email: reg_email,
      
     };
-    console.log(data);
 
     jQuery.ajax({
       url: ajax_url,
