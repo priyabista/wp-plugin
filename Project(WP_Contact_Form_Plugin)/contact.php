@@ -7,16 +7,13 @@ Text Domain: contact-form
 Author: Priya
 */
 
-if(! defined('ABSPATH')){
-    exit;
-}
-
+    if(! defined('ABSPATH')){
+        exit;
+    }
 class Cf_Contact_Form{
 
     public function __construct() 
     {
-    // error_log(print_r($file_name, true));
-      
       $this->init_hooks();
 
       add_shortcode('contact_form', array($this, 'cf_show_template_frontend_contact_form'));
@@ -34,7 +31,7 @@ class Cf_Contact_Form{
 
     public function cf_create_table()
     {
-      global $wpdb;
+       global $wpdb;
         
        $table_name = $wpdb->prefix . 'contact_form';
 
@@ -64,9 +61,9 @@ class Cf_Contact_Form{
 
     public function cf_show_template_frontend_contact_form()
     {
-          ob_start(); // Start output buffering
-          include_once dirname(__FILE__) . '/templates/contact-form.php';
-          return ob_get_clean(); // Return the buffered content 
+        ob_start();
+        include_once dirname(__FILE__) . '/templates/contact-form.php';
+        return ob_get_clean(); 
     }
 
     public function cf_show_contact_table()
@@ -76,7 +73,6 @@ class Cf_Contact_Form{
         return ob_get_clean();  
     }
 }
-
     $contact_form_obj = new  Cf_Contact_Form();
 
 ?>

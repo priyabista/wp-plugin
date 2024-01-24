@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
       var reg_message = $('#Message').val();
   
   
-      var ajax_url = my_ajax_obj.ajax_url;
+      var ajax_url = my_ajax_obj.ajaxUrl;
   
        var data = {
        action: 'contact_details',

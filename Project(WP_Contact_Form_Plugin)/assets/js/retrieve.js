@@ -1,9 +1,6 @@
-
 jQuery(document).ready(function ($) {
     function getContactDetails(orderBy, sortOrder, searchQuery) {
-        var ajax_url = my_ajax_obj.ajax_url;
-
-        // var escapedSearchQuery = encodeURIComponent(searchQuery);
+        var ajax_url = my_ajax_obj.ajaxUrl;
 
         var data = {
             action: 'retrieve_contact_data',
@@ -68,7 +65,6 @@ jQuery(document).ready(function ($) {
         console.log("Searching...");
         getContactDetails('', '', $("#searchInput").val());
     });
-
 
     getContactDetails('', '');
 });
