@@ -20,16 +20,15 @@ jQuery(document).ready(function($) {
        Message: reg_message,
        
       };
-  
-      jQuery.ajax({
-        url: ajax_url,
-        data: data,
-        type: 'post',
-        success:function(result){
-          alert(result);
-        }
-  
-      });
+          jQuery.ajax({
+            url: ajax_url,
+            data: data,
+            type: 'post',
+            success: function(result) {
+            alert(result);
+            jQuery('#contactForm')[0].reset();
+            }
+        });
     
      })
 });

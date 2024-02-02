@@ -1,3 +1,10 @@
+<div id="update-cf">
+
+<?php 
+    include_once dirname(__FILE__) . '/update-contact-form.php'; 
+?>
+</div>
+
 <table id="table" class="table">
     <thead>
         <tr>
@@ -41,6 +48,8 @@
             </th>
             <th><?php esc_html_e( 'Subject', 'contact-form' ); ?></th>
             <th><?php esc_html_e( 'Message', 'contact-form' ); ?></th>
+            <th><?php esc_html_e( 'Update', 'contact-form' ); ?></th>
+            <th><?php esc_html_e( 'Delete', 'contact-form' ); ?></th>
         </tr>
     </thead>
     <tbody>

@@ -1,5 +1,5 @@
 <div class="contact-form">
-	<form action="<?php echo admin_url('admin-ajax.php') ?>" id="contactForm"  method="post">
+	<form action="<?php echo admin_url('admin-ajax.php') ?>" id="updateForm"  method="post">
 		<label for="name"><?php esc_html_e( 'Name:', 'contact-form' );?></label> 
 		<input type="text" id="Name" name="Name" required><br><br>
 
@@ -17,7 +17,7 @@
 		?>
 	
 		<div style="text-align:center; margin-top: 20px;">
-		<input type="submit" name="submit" class="btn btn-primary">
+		<input type="submit" id="cf_submit" name="update" value="Update" class="btn btn-primary">
 		</div>
 			
 	</form>

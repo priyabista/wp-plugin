@@ -37,7 +37,7 @@ class Cf_Contact_Form{
 
        $charset_collate = $wpdb->get_charset_collate();
     
-       $sql = "CREATE TABLE  $table_name (id int(9) PRIMARY KEY NOT NULL AUTO_INCREMENT,Name varchar(255) NOT NULL, 
+       $sql = "CREATE TABLE IF NOT EXISTS $table_name (id int(9) PRIMARY KEY NOT NULL AUTO_INCREMENT,Name varchar(255) NOT NULL, 
        Email varchar(255) NOT NULL, Subject varchar(255) NOT NULL, Message varchar(255) NOT NULL ) $charset_collate;";
 
        $wpdb->query($sql);
@@ -73,6 +73,6 @@ class Cf_Contact_Form{
         return ob_get_clean();  
     }
 }
-    $contact_form_obj = new  Cf_Contact_Form();
+  new  Cf_Contact_Form();
 
 ?>
